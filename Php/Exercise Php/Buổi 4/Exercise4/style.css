@@ -1,0 +1,13 @@
+.container{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+.heading{
+    background-color: rgb(202, 199, 199);
+    border-bottom: rgb(167, 165, 165) 3px solid;
+    margin-bottom: 10px;
+}
+.firstName,.lastName,.selectBg{
+    margin:10px 0;
+}

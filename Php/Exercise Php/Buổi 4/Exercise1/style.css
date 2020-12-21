@@ -1,0 +1,62 @@
+body{
+    font-family: Verdana;
+    background-color: rgb(161, 97, 97);
+}
+.header{
+    background-color: pink;
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid black;
+
+}
+.header a{
+    list-style-type: none;
+    display: inline-block;
+    background-color: yellow;
+    padding:5px;
+    border:1px solid black;
+    border-radius: 2px;
+}
+h1{
+    color: red;
+    font-family: Arial;
+}
+h2{
+    color:white;
+}
+.header a:hover {
+    background-color: purple;
+    color: pink;
+    text-decoration: none;
+}
+.img{
+    background-color: yellow;
+    text-align: center;
+}
+.box{
+    width: 50%;
+    margin: 15px auto;
+    background-color: cornsilk;
+    border: 3px dotted ;
+}
+.content{
+    padding: 15px;
+}
+.school{
+    background-color: blue;
+    color: white;
+    text-align: center;
+    width: 75px;
+    height: 25px;
+    border-radius: 5px;
+}
+footer{
+    width: 200px;
+    padding: 15px;
+    background-color: #0ff;
+    border:1px solid;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 13px;
+}

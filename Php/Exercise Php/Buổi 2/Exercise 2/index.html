@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        color: purple;
+    }
+    h2{
+        color:	#FF4E5D ;
+    }
+    fieldset p{
+        margin-top: 20px;
+    }
+    #bookName{
+        width: 250px;
+    }
+    #quantity{
+        width: 20px;
+    }
+</style>
+<body>
+    <form action="" class="orderForm">
+        <h1>A Simple Form</h1>
+        <h2>Form fundamental</h2>
+        <fieldset>
+            <legend>Customer Info</legend>
+            <p>
+                <label for="" class="name">Name:</label> <input type="text" placeholder="Enter you name" size="50">
+            </p>
+            <p>
+                <label for="" class="telephone">Telephone:</label> <input type="text" placeholder="Pattern: 1-234-567-8910" size="50"><br>
+            </p>
+            <p>
+                <label for="" class="email">Email address:</label> <input type="text" placeholder="Enter your email address" size="50"><br>
+            </p>
+            <p>
+                <label for="" class="gender">Gender:</label> <input type="radio" name="Gender" id="Male" value="Male"><label for="Male">Male</label>  <input type="radio" name="Gender" id="Female" value="Female"><label for="Female">Female</label><br>
+            </p>
+            <p>
+                <label for="" class="hobbies">Hobbies:</label> <input type="checkbox" name="Hobbies" id="Basketball" value="Basketball"><label for="Basketball">Basketball</label> <input type="checkbox" name="Hobbies" id="Football" value="Football"><label for="Football">Football</label> <input type="checkbox" name="Hobbies" id="Badminton" value="Badminton"><label for="Badminton">Badminton</label>
+            </p>        
+        </fieldset>
+        <fieldset>
+            <legend>Books</legend>
+            <p>
+                <label for="">Name:</label><input type="text" name="" id="bookName"><label for="">Quantity(Maximum 5):</label><input type="text" name="" id="quantity" min="1" max="5">
+            </p>
+            
+        </fieldset>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    
+</body>
+</html>
