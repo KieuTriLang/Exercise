@@ -1,0 +1,57 @@
+#form_create_cv{
+	width: 75%;
+	margin: 0 auto;
+	border: 10px solid #1E90FF;
+	min-height: 400px;
+	padding: 15px;
+	font-family: sans-serif;
+}
+.bg_image{
+	background-image: url('./background/photo.jpg');
+	background-size: cover;
+	height: 400px;
+}
+.title_section{
+	width: 45%;
+	color: #000;
+	min-height: 120px;
+	border: 1px solid gray;
+	position: relative;
+	top: 50%;
+	left: 10%;
+	background-color: rgba(255, 245, 238, 0.788);
+	padding: 10px;
+}
+.underline_width{
+	width: 40%;
+	position: relative;
+    left: -30%;
+}
+.data_left{
+	padding-left: 15px;
+}
+.label_color{
+	color: #1E90FF;
+}
+.label_bold, .submit{
+	font-weight: bold;
+}
+.star_red{
+	color: red;
+}
+.input_width, .submit{
+	width: 97%;
+	padding: 5px;
+}
+.submit{
+	background-color: #32CD32;
+	color: #fff;
+	border: none;
+}
+.question_center{
+	text-align: center;
+}
+.codeword{
+    width: 100px;
+    height: 30px;
+}

@@ -1,3 +1,4 @@
+var mul=document.getElementById("mul")
 var mul=document.querySelector('#mul');
 var div=document.querySelector('#div');
 

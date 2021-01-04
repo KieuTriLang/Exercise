@@ -1,0 +1,34 @@
+.container{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.title_section{
+    font-size: 48px;
+    color: orange;
+}
+.col{
+    display: inline-block;
+    text-align: center;
+}
+.col-6{
+    width: 45%;
+    margin-top: 50px;
+}
+
+.logo_IBM{
+    width: 250px;
+    height: 100px;
+}
+.logo_Microsoft{
+    width: 100px;
+    height: 100px;
+}
+.logo_Apple{
+    width: 100px;
+    height: 100px;
+}
+.logo_Google{
+    width: 350px;
+    height: 100px;
+}
