@@ -13,17 +13,19 @@
 }
 .title_section{
 	width: 45%;
-	color: #000;
+	color: black;
 	min-height: 120px;
 	border: 1px solid gray;
 	position: relative;
 	top: 50%;
-	left: 10%;
+	left: 5%;
 	background-color: rgba(255, 245, 238, 0.788);
 	padding: 10px;
 }
 .underline_width{
 	width: 40%;
+	height: 3px;
+	background-color: black;
 	position: relative;
     left: -30%;
 }
@@ -34,7 +36,7 @@
 	color: #1E90FF;
 }
 .label_bold, .submit{
-	font-weight: bold;
+	font-weight: 700;
 }
 .star_red{
 	color: red;
@@ -44,8 +46,8 @@
 	padding: 5px;
 }
 .submit{
-	background-color: #32CD32;
-	color: #fff;
+	background-color: rgb(50, 205, 50);
+	color: rgb(255, 255, 255);
 	border: none;
 }
 .question_center{

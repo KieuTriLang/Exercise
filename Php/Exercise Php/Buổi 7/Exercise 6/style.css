@@ -52,9 +52,6 @@
 .form-group{
 	line-height: 40px;
 }
-hr{
-
-}
 .row hr h3{
 	float:left;
 }
@@ -66,7 +63,7 @@ hr{
 	text-align: left;
 	display: inline-block;
 }
-.col-forgot{
+.forgot{
 	width:48%;
 	text-align:right;
 	display: inline-block;
@@ -79,24 +76,20 @@ hr{
 }
 .blue-text{
 	float:left;
-	color:lightblue;
+	color:rgb(80, 118, 175);
 }
 .Login-button{
 	width:100%;
 	padding: 7px;
 	border: none;
-	background-color: lightblue;
+	background-color: rgb(80, 118, 175);
 }
 .regsiter{
 	width:100%;
 	padding: 7px;
 	border: 1px solid;
 }
-.row-regsiter{ 
-	position:relative;
-	left: 450px;
-	top:-485px;
-}
-.row-login{
+
+.login{
 	position:relative;
 }
