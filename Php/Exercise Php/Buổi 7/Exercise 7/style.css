@@ -1,0 +1,72 @@
+body{
+    background-color: rgb(150, 148, 148);
+}
+.container{
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    background-image: url("./img/background.jpg");
+    background-size: cover;
+    height: 150vh;
+    font-family: 'Dancing Script', cursive;
+    color: rgb(255, 255, 255);
+    font-size: 28px;
+}
+.decor{
+    position: absolute;
+}
+.xmas_ball{
+    margin-left: 20px;
+}
+.xmas_tree{
+    position: absolute;
+    top: 650px;
+    width: 200px;
+    height: 200px;
+}
+.xmas_snowflake{
+    position: absolute;
+    animation: drop 0s linear infinite;
+}
+@keyframes drop{
+    0%{
+        opacity: 1;
+    }
+    25%{
+        transform:  translateY(200px) rotate(-45deg);
+    }
+    75%{
+        transform:  translateY(600px) rotate(45deg);
+    }
+    100%{
+        opacity: .6;
+        transform: translateY(800px);
+    }
+}
+
+.title{
+    text-align: center;
+    line-height: 12px;
+    color: rgb(243, 224, 78);
+    font-size: 36px;
+}
+.title h2{
+    padding-top: 200px;
+}
+.wishes{
+    width: 70%;
+    margin: 0 auto;
+}
+.wishes b{
+    color: rgb(243, 224, 78);
+}
+.wishes button{
+    margin-left: 33%;
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    border: 1px white solid;
+    border-radius: 100px;
+    background-color: rgb(110, 110, 189);
+    color: white;
+}

@@ -1,0 +1,29 @@
+.container{
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(243, 224, 78);
+    font-size: 18px;
+}
+.food_img{
+    width: 400px;
+    height: 250px;
+    margin: 10px;
+}
+.food_detail{
+    width: 75%;
+    margin: 0 auto;
+}
+.food_name{
+    font-size: 48px;
+}
+.processing{
+    line-height: 36px;
+}
+a{
+    text-decoration: none;
+}
+#instructor_info{
+    position: absolute;
+    display: none;
+}

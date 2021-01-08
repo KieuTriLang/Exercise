@@ -1,0 +1,26 @@
+.container{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.contact img{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+}
+.contact p{
+    display: inline-block;
+}
+.content{
+    text-align: left;
+    width: 75%;
+    margin: 0 auto;
+}
+.time{
+    text-align: right;
+}
+.job_Target,
+.Education,
+.Experience{
+    margin-top: 50px;
+}
