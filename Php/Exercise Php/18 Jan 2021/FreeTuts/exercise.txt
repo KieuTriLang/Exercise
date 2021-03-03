@@ -5,3 +5,8 @@ Exercise 2:
 Exercise 3:
     /[a-zA-Z][a-zA-Z0-9_]{3,11}/g
 Exercise 4:
+    [0-9a-zA-Z]{1,}@[a-z]{3,6}.[a-z]{2,}
+Exercise 5:
+    http[s]?:[\/]{1,}\S+
+Exercise 6:
+    /[0-9a-zA-Z]{1,}@[a-z]{3,6}.[a-z]{2,}/g
