@@ -10,3 +10,4 @@ Exercise 5:
     http[s]?:[\/]{1,}\S+
 Exercise 6:
     /[0-9a-zA-Z]{1,}@[a-z]{3,6}.[a-z]{2,}/g
+Exercise 7:
