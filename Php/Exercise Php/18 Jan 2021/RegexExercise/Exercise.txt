@@ -1,0 +1,8 @@
+Exercise 1: /[0-9]/g
+Exercise 2: /^[a-z][0-9]{1,}/g
+Exercise 3: /036[0-9]{7}/g
+Exercise 4: /^[^_ 0-9][a-zA-Z0-9_]{1,}.html/g
+Exercise 5:
+/han/igm ---> tìm trong văn bản chữ 'han' không phân biệt chữ in hoa và chữ thường
+/bi(l){2}/igm ---> tìm trong văn bản chữ 'bill' không phân biệt chữ chữ in hoa và chữ thường
+/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+.+.[a-zA-Z]{2,4}/igm ---> tìm trong văn bản email không phân biệt chữ in hoa chữ thường
