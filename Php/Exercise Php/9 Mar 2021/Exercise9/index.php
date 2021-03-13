@@ -19,7 +19,7 @@
         height: 30px;
     }
 
-    .snt {
+    .bg-lightgreen {
         background-color: lightgreen;
     }
 </style>
@@ -39,7 +39,7 @@
                 if ($i * 10 + $j < 2) {
                     echo "<td>" . ($i * 10 + $j) . "</td>";
                 } elseif ($count == 0) {
-                    echo "<td class='snt'>" . ($i * 10 + $j) . "</td>";
+                    echo "<td class='bg-lightgreen'>" . ($i * 10 + $j) . "</td>";
                 } else {
                     echo "<td>" . ($i * 10 + $j) . "</td>";
                 }
