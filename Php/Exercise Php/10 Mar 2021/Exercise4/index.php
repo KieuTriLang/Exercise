@@ -14,6 +14,13 @@
 
 <body>
     <?php
+    function checkbox($str,$arr2){
+        foreach($arr2 as $val){
+            if($str==$val){
+                return true;
+            }
+        }
+    }
     $fName = $lName = $gender = $address = $magazines = $duration = $paymentOp = $err = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (trim($_POST["firstName"] == "")) {
@@ -84,15 +91,15 @@
             </fieldset>
             <fieldset>
                 <legend>Magazines Subscription For</legend>
-                <input type="checkbox" name="magazines[]" id="magazine" value="TIME">
+                <input type="checkbox" name="magazines[]" id="magazine" value="TIME" <?php if($_SERVER["REQUEST_METHOD"]=="POST"){if(checkbox("TIME",$_POST["magazines"])) echo "checked=checked";}  ?>>
                 <label for="magazines" class="mr-3">TIME</label>
-                <input type="checkbox" name="magazines[]" id="magazine" value="Newsweek">
+                <input type="checkbox" name="magazines[]" id="magazine" value="Newsweek"<?php if($_SERVER["REQUEST_METHOD"]=="POST"){if(checkbox("Newsweek",$_POST["magazines"])) echo "checked=checked";}  ?>>
                 <label for="magazines" class="mr-3">Newsweek</label>
-                <input type="checkbox" name="magazines[]" id="magazine" value="Sunday">
+                <input type="checkbox" name="magazines[]" id="magazine" value="Sunday"<?php if($_SERVER["REQUEST_METHOD"]=="POST"){if(checkbox("Sunday",$_POST["magazines"])) echo "checked=checked";}  ?>>
                 <label for="magazines" class="mr-3">Sunday</label>
-                <input type="checkbox" name="magazines[]" id="magazine" value="Vogue">
+                <input type="checkbox" name="magazines[]" id="magazine" value="Vogue"<?php if($_SERVER["REQUEST_METHOD"]=="POST"){if(checkbox("Vogue",$_POST["magazines"])) echo "checked=checked";} ?>>
                 <label for="magazines" class="mr-3">Vogue</label>
-                <input type="checkbox" name="magazines[]" id="magazine" value="People">
+                <input type="checkbox" name="magazines[]" id="magazine" value="People"<?php if($_SERVER["REQUEST_METHOD"]=="POST"){if(checkbox("People",$_POST["magazines"])) echo "checked=checked";} ?>>
                 <label for="magazines" class="mr-3">People</label>
             </fieldset>
             <fieldset>
