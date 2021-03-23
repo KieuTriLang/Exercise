@@ -12,7 +12,7 @@
     <title>Exercise 3</title>
 </head>
 <?php
-$textErr = $checkboxErr = $textareaErr = $radioErr = $fileErr =$checkbox= "";
+$textErr = $checkboxErr = $textareaErr = $radioErr = $fileErr = $checkbox = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (trim($_POST["text"]) == '') {
         $textErr = "*Text is required";
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $checkbox .= "$val,";
         }
     }
-    if (trim($_POST["textarea"])== "") {
+    if (trim($_POST["textarea"]) == "") {
         $textareaErr = "*Textarea is required";
     } else {
         $textarea = $_POST["textarea"];
@@ -37,31 +37,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $radio = $_POST["radioBtn"];
     }
     $select = $_POST["option"];
-    $state_uploaded = 0;
-    if ($_FILES["fileUpload"]["tmp_name"] != "") {
-        $target_dir = "../upload/";
-        $target_file = $target_dir . basename($_FILES["fileUpload"]["name"]);
-        $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-        $allowType = ["jpg", "png", "jpeg", "gif"];
-        if (isset($_POST["submit"])) {
-            $checkImage = getimagesize($_FILES["fileUpload"]["tmp_name"]);
-            if ($checkImage) {
-                $state_uploaded = 1;
-            } else {
-                $fileErr = "*Not file image";
-                $state_uploaded = 0;
+    $state_uploaded = array();
+    $target_dir = "../upload/";
+    $allowType = ["jpg", "png", "jpeg", "gif"];
+    $total = count($_FILES["fileUpload"]["name"]);
+    for ($i = 0; $i < $total; $i++) {
+        if ($_FILES["fileUpload"]["tmp_name"][$i] != "") {
+            $target_file[$i] = $target_dir . basename($_FILES["fileUpload"]["name"][$i]);
+            $imageFileType[$i] = pathinfo($target_file[$i], PATHINFO_EXTENSION);
+            if (isset($_POST["submit"])) {
+                $checkImage[$i] = getimagesize($_FILES["fileUpload"]["tmp_name"][$i]);
+                if ($checkImage[$i]) {
+                    $state_uploaded[$i] = 1;
+                } else {
+                    $fileErr = "*Not file image";
+                    $state_uploaded[$i] = 0;
+                }
             }
+            if (file_exists($target_file[$i])) {
+                $fileErr = "*file already exists";
+                $state_uploaded[$i] = 0;
+            }
+            if (!in_array($imageFileType, $allowType)) {
+                $fileErr = "*file type must be jpg, png, jpeg or gif";
+                $state_uploaded[$i] = 0;
+            }
+        } else {
+            $fileErr = "*You haven't uploaded the photo yet";
         }
-        if (file_exists($target_file)) {
-            $fileErr = "*file already exists";
-            $state_uploaded = 0;
-        }
-        if (!in_array($imageFileType, $allowType)) {
-            $fileErr = "*file type must be jpg, png, jpeg or gif";
-            $state_uploaded = 0;
-        }
-    } else {
-        $fileErr = "*You haven't uploaded the photo yet";
     }
 }
 ?>
@@ -91,15 +94,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="form-group">
                 <label for="option">Option</label><span class="text-danger">
-                <select name="option" id="option" class="form-control">
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
+                    <select name="option" id="option" class="form-control">
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
             </div>
             <div class="form-group">
                 <label for="file">Upload File</label><span class="text-danger"><?php echo $fileErr; ?></span><br>
-                <input type="file" name="fileUpload" id="file">
+                <input type="file" name="fileUpload[]" id="file" multiple="true">
             </div>
             <div class="form-group">
                 <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-primary form-control">
@@ -108,14 +111,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($state_uploaded) {
-                if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $target_file)) {
-                    echo "Text: $text <br>";
-                    echo "Checkbox: $checkbox <br>";
-                    echo "Textarea: $textarea <br>";
-                    echo "Radio: $radio <br>";
-                    echo "Select: $select <br>";
-                    echo "Uploads file: <br>";
-                    echo "<img src='$target_file' alt='err'><br>";
+                echo "Text: $text <br>";
+                echo "Checkbox: $checkbox <br>";
+                echo "Textarea: $textarea <br>";
+                echo "Radio: $radio <br>";
+                echo "Select: $select <br>";
+                echo "Uploads file: <br>";
+                for ($i = 0; $i < $total; $i++) {
+                    if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"][$i], $target_file[$i])) {
+                        echo "<img src='$target_file[$i]' alt='err' class='col-".(12/$total)."'>";
+                    }
                 }
             }
         }
